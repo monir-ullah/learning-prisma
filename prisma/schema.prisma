@@ -17,11 +17,13 @@ model User {
   posts Post[]
 }
 
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
+
+
+model Post{
+  id Int @id @default(autoincrement())
+  title String
+  content String?
   published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  Int
+  author User @relation(fields: [authorId], references: [id])
+  authorId Int
 }
